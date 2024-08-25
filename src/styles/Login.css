@@ -1,0 +1,85 @@
+.logboxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.logbox {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logregSelector {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.logbtn {
+  flex: 1;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 10px 0px 0px 0px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.regbtn {
+  flex: 1;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 0px 10px 0px 0px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.credentials {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  border: 1px solid #494646;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.inputContainer select {
+  border: none;
+  outline: none;
+}
+
+.inputContainer input {
+  border: none;
+  outline: none;
+}
+
+.credentials button {
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
