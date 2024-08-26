@@ -96,6 +96,18 @@
     border-left: none;
     border-bottom: none;
     padding: 10px;
+    text-align: center;
+  }
+
+  th a, td a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+
+  th a:hover, td a:hover{
+    color: #333;
+    transition: 0.25s;
   }
   
   tr th:last-child, tr td:last-child{

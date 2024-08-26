@@ -136,7 +136,9 @@ const Project = () => {
       <hr />
       <div className="userStats">
         {user?.role !== "admin" && project?.status === "archived" && (
-          <p>Projekti on päättynyt et voi tehdä lisäyksiä!</p>
+          <div className="userStat error">
+            <p>Projekti on päättynyt et voi tehdä lisäyksiä!</p>
+          </div>
         )}
         <div className="userStat">
           <p>Tehdyt merkinnät:</p>

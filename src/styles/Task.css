@@ -7,6 +7,13 @@
     padding: 0px
 }
 
+@media screen and (max-width: 992px){
+    .markForm{
+        width: 75%;
+    }
+    
+}
+
 .addMark{
     width: 100%;
     border: 1px solid #000;

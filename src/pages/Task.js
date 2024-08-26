@@ -92,7 +92,7 @@ const Task = () => {
         {user?.role !== "admin" &&
           (project.status === "archived" ||
             task.attributes.status === "archived") && (
-            <div className="userStat">
+            <div className="userStat error">
               <p>Projekti tai tehtävä on päättynyt. Et voi tehdä muutoksia!</p>
             </div>
           )}
