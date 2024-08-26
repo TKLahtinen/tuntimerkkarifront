@@ -69,6 +69,7 @@ const Project = () => {
     );
     setSelectedTask(null);
     handleEditModal();
+    setSelectedTask(null);
   };
 
   // Valitsee tehtavan muokkausta varten

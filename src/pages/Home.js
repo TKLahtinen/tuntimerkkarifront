@@ -71,6 +71,7 @@ const Home = () => {
       projectCreated
     );
     handleEditModal();
+    setSelectedProject(null);
   };
 
   // Luo uuden projektin
