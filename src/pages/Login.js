@@ -54,14 +54,15 @@ const Login = () => {
             });
             let data = response.data.status;
             localStorage.setItem('user', JSON.stringify({
-                user_id: data.data.user.id,
-                name: data.data.user.name,
-                role: data.data.user.role,
+                user_id: data.data.id,
+                name: data.data.name,
+                role: data.data.role,
                 token: data.token
             }));
             navigate('/home');
         }   catch (error) {
             setError(true);
+            console.log(error);
         }
     };
 
