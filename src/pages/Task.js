@@ -16,6 +16,7 @@ const Task = () => {
   const [marks, setMarks] = useState([]);
   const [user, setUser] = useState(null);
   const [task, setTask] = useState(null);
+  const [sort, setSort] = useState("asc");
   const [project, setProject] = useState(null);
   const [markCreated, setMarkCreated] = useState(false);
   const [markDeleted, setMarkDeleted] = useState(false);
@@ -76,6 +77,17 @@ const Task = () => {
   const taskHours = marks.reduce((acc, mark) => {
     return acc + mark.attributes.h_amount;
   }, 0);
+
+  // Jarjestaa merkinnat paivan mukaan
+  const sortByDate = () => {
+    if (sort === "asc") {
+      setMarks(marks.sort((a, b) => (a.attributes.date > b.attributes.date ? 1 : -1)));
+      setSort("desc");
+    } else {
+      setMarks(marks.sort((a, b) => (a.attributes.date < b.attributes.date ? 1 : -1)));
+      setSort("asc");
+    }
+  };
 
   if (!task || !project) {
     return <div>Ladataan...</div>;
@@ -151,7 +163,7 @@ const Task = () => {
             <tr>
               <th>Merkitsijä</th>
               <th>Määrä</th>
-              <th>Päivämäärä</th>
+              <th onClick={sortByDate} style={{cursor: "pointer"}}>Päivämäärä</th>
               <th></th>
             </tr>
           </thead>

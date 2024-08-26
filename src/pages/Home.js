@@ -259,7 +259,7 @@ const Home = () => {
               <th>Nimi</th>
               <th>Tehtävät</th>
               <th>Tunnit</th>
-              <th onClick={sortByDate}>Aloitus pvm</th>
+              <th onClick={sortByDate} style={{cursor: "pointer"}}>Aloitus pvm</th>
               <th>
                 <select onChange={(e) => setProjectStatus(e.target.value)}>
                   <option value="active">Aktiivinen</option>

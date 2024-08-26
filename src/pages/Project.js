@@ -11,6 +11,7 @@ const Project = () => {
   const [tasks, setTasks] = useState([]);
   const [project, setProject] = useState([]);
   const [taskStatus, setTaskStatus] = useState("active");
+  const [sort, setSort] = useState("asc");
 
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
@@ -113,8 +114,22 @@ const Project = () => {
   );
 
   // Jarjestaa listan paivamaaran mukaan
-  const sortByDate = (a, b) => {
-    return new Date(a.attributes.start_date) - new Date(b.attributes.start_date);
+  const sortByDate = () => {
+    if (sort === "asc") {
+      setSort("desc");
+      setTasks(
+        tasks.sort((a, b) =>
+          a.attributes.start_date > b.attributes.start_date ? 1 : -1
+        )
+      );
+    } else {
+      setSort("asc");
+      setTasks(
+        tasks.sort((a, b) =>
+          a.attributes.start_date < b.attributes.start_date ? 1 : -1
+        )
+      );
+    }
   };
 
   // Tehtavien tehtyjen merkintojen maara
@@ -126,6 +141,8 @@ const Project = () => {
   const totalHours = tasks.reduce((acc, task) => {
     return acc + task.attributes.total_hours;
   }, 0);
+
+  
 
   return (
     <div className="container">
@@ -299,7 +316,7 @@ const Project = () => {
               <th>Nimi</th>
               <th>Merkinnät</th>
               <th>Tunnit</th>
-              <th>Aloitus pvm</th>
+              <th onClick={sortByDate} style={{cursor:"pointer"}}>Aloitus pvm</th>
               <th>
                 <select onChange={(e) => setTaskStatus(e.target.value)}>
                   <option value="active">Aktiivinen</option>
